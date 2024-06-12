@@ -1,0 +1,74 @@
+﻿@model NvdBKGK_lession07.Models.nvdSinhVien
+
+@{
+    ViewBag.Title = "NvdDetails";
+}
+
+<h2>NvdDetails</h2>
+
+<div>
+    <h4>nvdSinhVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NvdHoSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvdHoSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvdTenSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvdTenSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvdNgaySinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvdNgaySinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvdPhai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvdPhai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvdPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvdPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NvdEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NvdEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nvdKhoa.NvdTenKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nvdKhoa.NvdTenKH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NvdMaSV }) |
+    @Html.ActionLink("Back to List", "NvdIndex")
+</p>

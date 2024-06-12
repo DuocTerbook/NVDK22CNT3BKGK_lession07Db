@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NVDK22CNT3_Lession07DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="nvdKhoa">
+    <Key>
+      <PropertyRef Name="NvdMaKH" />
+    </Key>
+    <Property Name="NvdMaKH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NvdTenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NvdTrangThai" Type="Boolean" />
+    <NavigationProperty Name="nvdSinhViens" Relationship="Self.FK_nvdKhoa_nvdSinhVien" FromRole="nvdKhoa" ToRole="nvdSinhVien" />
+  </EntityType>
+  <EntityType Name="nvdSinhVien">
+    <Key>
+      <PropertyRef Name="NvdMaSV" />
+    </Key>
+    <Property Name="NvdMaSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NvdHoSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NvdTenSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NvdNgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="NvdPhai" Type="Boolean" />
+    <Property Name="NvdPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NvdEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NvdMaKH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="nvdKhoa" Relationship="Self.FK_nvdKhoa_nvdSinhVien" FromRole="nvdSinhVien" ToRole="nvdKhoa" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_nvdKhoa_nvdSinhVien">
+    <End Role="nvdKhoa" Type="Self.nvdKhoa" Multiplicity="0..1" />
+    <End Role="nvdSinhVien" Type="Self.nvdSinhVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="nvdKhoa">
+        <PropertyRef Name="NvdMaKH" />
+      </Principal>
+      <Dependent Role="nvdSinhVien">
+        <PropertyRef Name="NvdMaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NVDK22CNT3_Lession07DbEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="nvdKhoas" EntityType="Self.nvdKhoa" />
+    <EntitySet Name="nvdSinhViens" EntityType="Self.nvdSinhVien" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK_nvdKhoa_nvdSinhVien" Association="Self.FK_nvdKhoa_nvdSinhVien">
+      <End Role="nvdKhoa" EntitySet="nvdKhoas" />
+      <End Role="nvdSinhVien" EntitySet="nvdSinhViens" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

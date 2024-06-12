@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NVDK22CNT3_Lession07DbModelStoreContainer" CdmEntityContainer="NVDK22CNT3_Lession07DbEntities4">
+    <EntitySetMapping Name="nvdKhoas">
+      <EntityTypeMapping TypeName="NVDK22CNT3_Lession07DbModel.nvdKhoa">
+        <MappingFragment StoreEntitySet="nvdKhoa">
+          <ScalarProperty Name="NvdMaKH" ColumnName="NvdMaKH" />
+          <ScalarProperty Name="NvdTenKH" ColumnName="NvdTenKH" />
+          <ScalarProperty Name="NvdTrangThai" ColumnName="NvdTrangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nvdSinhViens">
+      <EntityTypeMapping TypeName="NVDK22CNT3_Lession07DbModel.nvdSinhVien">
+        <MappingFragment StoreEntitySet="nvdSinhVien">
+          <ScalarProperty Name="NvdMaSV" ColumnName="NvdMaSV" />
+          <ScalarProperty Name="NvdHoSV" ColumnName="NvdHoSV" />
+          <ScalarProperty Name="NvdTenSV" ColumnName="NvdTenSV" />
+          <ScalarProperty Name="NvdNgaySinh" ColumnName="NvdNgaySinh" />
+          <ScalarProperty Name="NvdPhai" ColumnName="NvdPhai" />
+          <ScalarProperty Name="NvdPhone" ColumnName="NvdPhone" />
+          <ScalarProperty Name="NvdEmail" ColumnName="NvdEmail" />
+          <ScalarProperty Name="NvdMaKH" ColumnName="NvdMaKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<NvdBKGK_lession07.Models.nvdSinhVien>
+
+@{
+    ViewBag.Title = "NvdIndex";
+}
+
+<h2>NvdIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "NvdCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NvdHoSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvdTenSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvdNgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvdPhai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvdPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NvdEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nvdKhoa.NvdTenKH)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvdHoSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvdTenSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvdNgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvdPhai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvdPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NvdEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nvdKhoa.NvdTenKH)
+        </td>
+        <td>
+            @Html.ActionLink("NvdEdit", "NvdEdit", new { id=item.NvdMaSV }) |
+            @Html.ActionLink("NvdDetails", "NvdDetails", new { id=item.NvdMaSV }) |
+            @Html.ActionLink("NvdDelete", "NvdDelete", new { id=item.NvdMaSV })
+        </td>
+    </tr>
+}
+
+</table>
